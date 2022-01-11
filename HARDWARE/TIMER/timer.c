@@ -69,7 +69,7 @@ void TIM4_PWM_Init(u16 arr,u16 psc)
 	TIM_DeInit(TIM4);
  
  
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6|GPIO_Pin_7; //TIM_CH2
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6|GPIO_Pin_7; //TIM_CH2  B6 pin out
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;  //??????
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);//???GPIO
@@ -101,7 +101,7 @@ void TIM4_PWM_Init(u16 arr,u16 psc)
 
  	TIM_ARRPreloadConfig(TIM4, ENABLE);
 	TIM_Cmd(TIM4, ENABLE);  //??TIM4
-	TIM_SetCompare1(TIM4,4999);	
+	TIM_SetCompare1(TIM4,4999);	  // ccr  set pwm value
 }
 
 
